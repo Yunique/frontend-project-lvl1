@@ -3,4 +3,3 @@
 import game from '../games/logicGcd';
 
 game();
-
