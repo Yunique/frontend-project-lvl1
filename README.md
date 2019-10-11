@@ -1,6 +1,6 @@
 My frontend project.
 
-https://asciinema.org/a/YrT98djP9wU2XzSdvQbwSMJlf
+<script id="asciicast-273793" src="https://asciinema.org/a/273793.js" async></script>
 
 [![Code Climate](https://codeclimate.com/github/Yunique/frontend-project-lvl1/badges/gpa.svg)](https://codeclimate.com/github/Yunique/frontend-project-lvl1)
 [![Issue Count](https://codeclimate.com/github/Yunique/frontend-project-lvl1/badges/issue_count.svg)](https://codeclimate.com/github/Yunique/frontend-project-lvl1)
