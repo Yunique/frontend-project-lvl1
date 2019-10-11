@@ -10,4 +10,4 @@ startgame:
 	npx babel-node src/bin/brain-even.js
 
 lint: 
-	npx eslint
+	npx eslint ./src
