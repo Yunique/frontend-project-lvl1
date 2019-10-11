@@ -1,5 +1,5 @@
 My frontend project.
 
-[![Code Climate](https://codeclimate.com/github/hexlet-boilerplates/javascript-package/badges/gpa.svg)](https://codeclimate.com/github/hexlet-boilerplates/javascript-package)
-[![Issue Count](https://codeclimate.com/github/hexlet-boilerplates/javascript-package/badges/issue_count.svg)](https://codeclimate.com/github/hexlet-boilerplates/javascript-package)
-[![Build Status](https://travis-ci.org/hexlet-boilerplates/nodejs-package.svg?branch=master)](https://travis-ci.org/hexlet-boilerplates/nodejs-package)
+[![Code Climate](https://codeclimate.com/github/Yunique/frontend-project-lvl1/badges/gpa.svg)](https://codeclimate.com/github/Yunique/frontend-project-lvl1)
+[![Issue Count](https://codeclimate.com/github/Yunique/frontend-project-lvl1/badges/issue_count.svg)](https://codeclimate.com/github/Yunique/frontend-project-lvl1)
+[![Build Status](https://travis-ci.org/Yunique/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/Yunique/frontend-project-lvl1)
