@@ -1,5 +1,5 @@
-import { greeting, rand, gameProcess } from '../engine';
 import { evaluate } from 'mathjs';
+import { greeting, rand, gameProcess } from '../engine';
 
 const getExp = () => {
   const minRange = 0;
@@ -7,7 +7,7 @@ const getExp = () => {
   const actions = '+-*';
   const firstNum = rand(minRange, maxRange);
   const secondNum = rand(minRange, maxRange);
-  const exp = `${firstNum}${actions[rand(minRange, actions.length -1)]}${secondNum}`;
+  const exp = `${firstNum}${actions[rand(minRange, actions.length - 1)]}${secondNum}`;
   return exp;
 };
 
