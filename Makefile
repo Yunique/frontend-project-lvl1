@@ -6,8 +6,11 @@ publish:
 start:
 	npx babel-node src/bin/brain-games.js
 
-startgame: 
+startEven: 
 	npx babel-node src/bin/brain-even.js
+
+startCalc:
+	npx babel-node src/bin/brain-calc.js
 
 lint: 
 	npx eslint ./src
