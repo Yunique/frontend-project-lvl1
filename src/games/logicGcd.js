@@ -11,19 +11,9 @@ const getExp = () => {
 };
 
 const calcExp = (expression) => {
-  let numFirst = '';
-  let numSecond = '';
-  for (let index = 0; expression[index] !== ' '; index += 1) {
-    numFirst += expression[index];
-  }
-
-  for (let index = 0; index <= expression.length; index += 1) {
-    if (expression[index] === ' ') {
-      numSecond = expression.slice(index + 1);
-    }
-  }
-  numFirst = Number(numFirst);
-  numSecond = Number(numSecond);
+  const space = expression.indexOf(' ');
+  const numFirst = Number(expression.slice(0, space));
+  const numSecond = Number(expression.slice(space + 1));
 
   const gcd = (x, y) => {
     if (y === 0) return Math.abs(x);
@@ -33,7 +23,7 @@ const calcExp = (expression) => {
 };
 
 const game = () => {
-  const userName = greeting('What is the result of the expression?');
+  const userName = greeting('Find the greatest common divisor of given numbers.');
   gameProcess(userName, getExp, calcExp);
 };
 
