@@ -18,5 +18,8 @@ startGcd:
 startProgression:
 	npx babel-node src/bin/brain-progression.js
 
+startPrime: 
+	npx babel-node src/bin/brain-prime.js
+
 lint: 
 	npx eslint ./src
