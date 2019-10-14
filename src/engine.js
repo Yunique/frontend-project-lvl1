@@ -7,7 +7,7 @@ export const rand = (randMin, randMax) => {
 };
 
 const greetAndShowDescription = (description) => {
-	console.log('Welcome to the Brain Games!');
+  console.log('Welcome to the Brain Games!');
   console.log(description);
   console.log('');
 };
@@ -29,10 +29,10 @@ const getAndCheckAnswer = (expression, rightAnswer) => {
 
 export const gameProcess = (description, getExpression, getRightAnswer) => {
   const attempts = 3;
-		
-	greetAndShowDescription(description);
+
+  greetAndShowDescription(description);
   const name = getName();
-	sayHello(name);
+  sayHello(name);
 
   for (let index = 0; index < attempts; index += 1) {
     const expression = getExpression();

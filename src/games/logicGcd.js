@@ -6,7 +6,7 @@ const getExpression = () => {
 
   const firstOperand = rand(minRand, maxRand);
   const secondOperand = rand(minRand, maxRand);
-  const expression = `${firstNum} ${secondNum}`;
+  const expression = `${firstOperand} ${secondOperand}`;
   return expression;
 };
 
