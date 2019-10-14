@@ -1,40 +1,42 @@
-import { greeting, rand, gameProcess } from '../engine';
+import { rand, gameProcess } from '../engine';
 
 const getProgression = () => {
   const minRand = 0;
   const maxRand = 100;
   const maxStep = 7;
-  const arrLength = 10;
+  const arrayLength = 10;
 
-  const firstNum = rand(minRand, maxRand);
+  const firstElement = rand(minRand, maxRand);
   const step = rand(minRand + 1, maxStep);
-  const missIndex = rand(minRand, arrLength - 1);
+  const missIndex = rand(minRand, arrayLength - 1);
 
-  const arr = [firstNum];
+  const progressionArray = [firstElement];
 
-  for (let index = 1; index < arrLength; index += 1) {
+  for (let index = 1; index < arrayLength; index += 1) {
     if (index === missIndex) {
-      arr.push('..');
-      arr.push(arr[index - 1] + step * 2);
+      progressionArray.push('..');
+      progressionArray.push(progressionArray[index - 1] + step * 2);
       index += 1;
-    } else arr.push(arr[index - 1] + step);
+    } else progressionArray.push(progressionArray[index - 1] + step);
   }
 
-  const stringArr = arr.join(' ');
+  const stringProgression = progressionArray.join(' ');
 
-  return stringArr;
+  return stringProgression;
 };
 
-const calcNum = (string) => {
-  const arr = string.split(' ');
-  const indexOfMiss = arr.indexOf('..');
-  const result = (Number(arr[indexOfMiss + 1]) + Number(arr[indexOfMiss - 1])) / 2;
-  return result.toString();
+const getRightAnswer = (string) => {
+  const calcElement = () => {
+    const progArr = string.split(' ');
+    const indexOfMiss = progArr.indexOf('..');
+    const result = (Number(progArr[indexOfMiss + 1]) + Number(progArr[indexOfMiss - 1])) / 2;
+    return result;
+  }; return calcElement().toString();
 };
 
 const game = () => {
-  const userName = greeting('What number is missing in the progression?');
-  gameProcess(userName, getProgression, calcNum);
+  const description = 'What number is missing in the progression?';
+  gameProcess(description, getProgression, getRightAnswer);
 };
 
 export default game;

@@ -1,40 +1,44 @@
 import readlineSync from 'readline-sync';
 
-export const rand = (rangeMin, rangeMax) => {
+export const rand = (randMin, randMax) => {
   const getRandomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-  return getRandomInRange(rangeMin, rangeMax);
+  return getRandomInRange(randMin, randMax);
 };
 
-export const greeting = (description) => {
-  console.log('Welcome to the Brain Games!');
+const greetAndShowDescription = (description) => {
+	console.log('Welcome to the Brain Games!');
   console.log(description);
   console.log('');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  console.log('');
-  return name;
 };
 
-const isEqual = (expression, rightAns) => {
+const getName = () => readlineSync.question('May I have your name? ');
+
+const sayHello = (name) => console.log(`Hello, ${name}!\n`);
+
+const getAndCheckAnswer = (expression, rightAnswer) => {
   console.log(`Question: ${expression}`);
-  const ans = readlineSync.question('Your answer: ');
-  if (ans !== rightAns) {
-    console.log(`${ans} is wrong answer ;(. Correct answer was ${rightAns}.`);
-    return ans;
+  const answer = readlineSync.question('Your answer: ');
+  if (answer !== rightAnswer) {
+    console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
+    return answer;
   }
   console.log('Correct!');
   return true;
 };
 
-export const gameProcess = (name, expressionFoo, calcAns) => {
+export const gameProcess = (description, getExpression, getRightAnswer) => {
   const attempts = 3;
+		
+	greetAndShowDescription(description);
+  const name = getName();
+	sayHello(name);
 
   for (let index = 0; index < attempts; index += 1) {
-    const expression = expressionFoo();
-    const rightAns = calcAns(expression);
-    const res = isEqual(expression, rightAns);
-    if (res !== true) {
+    const expression = getExpression();
+    const rightAnswer = getRightAnswer(expression);
+    const result = getAndCheckAnswer(expression, rightAnswer);
+    if (result !== true) {
       console.log(`Let's try again, ${name}!`);
       return;
     }

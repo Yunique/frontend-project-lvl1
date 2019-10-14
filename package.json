@@ -1,15 +1,15 @@
 {
   "name": "frontend-project-lvl1",
-  "version": "1.6.0",
+  "version": "1.5.2",
   "description": "This is a set of 5 mini-games.",
   "keywords": [
-      "brain-games",
-      "brain-even",
-      "brain-calc",
-      "brain-gcd",
-      "brain-progression",
-      "brain-prime",
-      "mini-games"
+    "brain-games",
+    "brain-even",
+    "brain-calc",
+    "brain-gcd",
+    "brain-progression",
+    "brain-prime",
+    "mini-games"
   ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js",

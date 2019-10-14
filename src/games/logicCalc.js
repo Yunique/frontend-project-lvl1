@@ -1,24 +1,26 @@
 import { evaluate } from 'mathjs';
-import { greeting, rand, gameProcess } from '../engine';
+import { rand, gameProcess } from '../engine';
 
-const getExp = () => {
-  const minRange = 0;
-  const maxRange = 100;
+const getExpression = () => {
+  const minRand = 0;
+  const maxRand = 100;
   const actions = '+-*';
-  const firstNum = rand(minRange, maxRange);
-  const secondNum = rand(minRange, maxRange);
-  const exp = `${firstNum}${actions[rand(minRange, actions.length - 1)]}${secondNum}`;
-  return exp;
+  const firstOperand = rand(minRand, maxRand);
+  const secondOperand = rand(minRand, maxRand);
+  const expression = `${firstOperand}${actions[rand(minRand, actions.length - 1)]}${secondOperand}`;
+  return expression;
+};
+const getRightAnswer = (expression) => {
+  const calcExpression = () => {
+    const result = evaluate(expression);
+    return result;
+  }; return calcExpression().toString();
 };
 
-const calcExp = (expression) => {
-  const result = evaluate(expression).toString();
-  return result;
-};
 
 const game = () => {
-  const userName = greeting('What is the result of the expression?');
-  gameProcess(userName, getExp, calcExp);
+  const description = 'What is the result of the expression?';
+  gameProcess(description, getExpression, getRightAnswer);
 };
 
 export default game;

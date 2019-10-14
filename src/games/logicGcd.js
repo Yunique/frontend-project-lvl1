@@ -1,30 +1,30 @@
-import { greeting, rand, gameProcess } from '../engine';
+import { rand, gameProcess } from '../engine';
 
-const getExp = () => {
-  const minRange = 0;
-  const maxRange = 100;
+const getExpression = () => {
+  const minRand = 0;
+  const maxRand = 100;
 
-  const firstNum = rand(minRange, maxRange);
-  const secondNum = rand(minRange, maxRange);
-  const exp = `${firstNum} ${secondNum}`;
-  return exp;
+  const firstOperand = rand(minRand, maxRand);
+  const secondOperand = rand(minRand, maxRand);
+  const expression = `${firstNum} ${secondNum}`;
+  return expression;
 };
 
-const calcExp = (expression) => {
+const getRightAnswer = (expression) => {
   const space = expression.indexOf(' ');
-  const numFirst = Number(expression.slice(0, space));
-  const numSecond = Number(expression.slice(space + 1));
+  const firstOperand = Number(expression.slice(0, space));
+  const secondOperand = Number(expression.slice(space + 1));
 
   const gcd = (x, y) => {
     if (y === 0) return Math.abs(x);
     return gcd(y, (x % y));
   };
-  return gcd(numFirst, numSecond).toString();
+  return gcd(firstOperand, secondOperand).toString();
 };
 
 const game = () => {
-  const userName = greeting('Find the greatest common divisor of given numbers.');
-  gameProcess(userName, getExp, calcExp);
+  const description = 'Find the greatest common divisor of given numbers.';
+  gameProcess(description, getExpression, getRightAnswer);
 };
 
 export default game;
