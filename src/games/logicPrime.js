@@ -7,18 +7,16 @@ const getExpression = () => {
   return operand;
 };
 
-const getRightAnswer = (number) => {
-  const isPrime = () => {
-    if (number <= 1) return false;
-    for (let counter = 2; counter <= (number / 2); counter += 1) {
-      if (number % counter === 0) return 'no';
-    } return 'yes';
-  }; return isPrime();
+const isPrime = (number) => {
+  if (number <= 1) return false;
+  for (let counter = 2; counter <= (number / 2); counter += 1) {
+    if (number % counter === 0) return 'no';
+  } return 'yes';
 };
 
 const game = () => {
   const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  gameProcess(description, getExpression, getRightAnswer);
+  gameProcess(description, getExpression, isPrime);
 };
 
 export default game;
