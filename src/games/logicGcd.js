@@ -1,7 +1,7 @@
 import { rand, gameProcess } from '../engine';
 
 const getExpression = () => {
-  const minRand = 0;
+  const minRand = 1;
   const maxRand = 100;
 
   const firstOperand = rand(minRand, maxRand);
