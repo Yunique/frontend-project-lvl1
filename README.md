@@ -6,20 +6,20 @@ My frontend project.
 
 ## Run brain-even
 
-<a href="https://asciinema.org/a/273942" target="_blank"><img src="https://asciinema.org/a/273942.svg" /></a>
+<a href="https://asciinema.org/a/274298" target="_blank"><img src="https://asciinema.org/a/274298.svg" /></a>
 
 ## Run brain-calc
 
-<a href="https://asciinema.org/a/273943" target="_blank"><img src="https://asciinema.org/a/273943.svg" /></a>
+<a href="https://asciinema.org/a/274299" target="_blank"><img src="https://asciinema.org/a/274299.svg" /></a>
 
 ## Run brain-gcd
 
-<a href="https://asciinema.org/a/273945" target="_blank"><img src="https://asciinema.org/a/273945.svg" /></a>
+<a href="https://asciinema.org/a/274304" target="_blank"><img src="https://asciinema.org/a/274304.svg" /></a>
 
 ## Run brain-progression
 
-<a href="https://asciinema.org/a/273946" target="_blank"><img src="https://asciinema.org/a/273946.svg" /></a>
+<a href="https://asciinema.org/a/274308" target="_blank"><img src="https://asciinema.org/a/274308.svg" /></a>
 
 ## Run brain-progression
 
-<a href="https://asciinema.org/a/273949" target="_blank"><img src="https://asciinema.org/a/273949.svg" /></a>
+<a href="https://asciinema.org/a/274309" target="_blank"><img src="https://asciinema.org/a/274309.svg" /></a>
