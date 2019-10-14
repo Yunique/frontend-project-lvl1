@@ -1,13 +1,13 @@
 import { rand, gameProcess } from '../engine';
 
 const getProgression = () => {
-  const minRand = 0;
+  const minRand = 1;
   const maxRand = 100;
   const maxStep = 7;
   const arrayLength = 10;
 
   const firstElement = rand(minRand, maxRand);
-  const step = rand(minRand + 1, maxStep);
+  const step = rand(minRand, maxStep);
   const missIndex = rand(minRand, arrayLength - 1);
 
   const progressionArray = [firstElement];
