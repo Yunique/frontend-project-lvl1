@@ -1,8 +1,16 @@
 {
   "name": "frontend-project-lvl1",
-  "version": "1.5.1",
-  "description": "",
-  "main": "index.js",
+  "version": "1.6.0",
+  "description": "This is a set of 5 mini-games.",
+  "keywords": [
+      "brain-games",
+      "brain-even",
+      "brain-calc",
+      "brain-gcd",
+      "brain-progression",
+      "brain-prime",
+      "mini-games"
+  ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
@@ -23,7 +31,7 @@
     "type": "git",
     "url": "git+https://github.com/Yunique/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "Yunik Stepanyan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Yunique/frontend-project-lvl1/issues"
