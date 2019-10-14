@@ -23,4 +23,4 @@ startPrime:
 	npx babel-node src/bin/brain-prime.js
 
 lint: 
-	npx eslint ./src
+	npx eslint .
