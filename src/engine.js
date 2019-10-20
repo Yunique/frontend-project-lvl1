@@ -1,48 +1,31 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from '@hexlet/pairs';
 
-export const rand = (randMin, randMax) => {
-  const getRandomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+export const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-  return getRandomInRange(randMin, randMax);
-};
+const attempts = 3;
 
-const greetAndShowDescription = (description) => {
-  console.log('Welcome to the Brain Games!');
-  console.log(description);
-  console.log('');
-};
-
-const getName = () => readlineSync.question('May I have your name? ');
-
-const sayHello = (name) => console.log(`Hello, ${name}!\n`);
-
-const getAndCheckAnswer = (expression, rightAnswer) => {
-  console.log(`Question: ${expression}`);
-  const answer = readlineSync.question('Your answer: ');
-  if (answer !== rightAnswer) {
-    console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
-    return answer;
-  }
-  console.log('Correct!');
+const сheckAnswer = (userAnswer, rightAnswer) => {
+  if (userAnswer !== rightAnswer) return false;
   return true;
 };
 
-export const gameProcess = (description, getExpression, getRightAnswer) => {
-  const attempts = 3;
-
-  greetAndShowDescription(description);
-  const name = getName();
-  sayHello(name);
+export const gameProcess = (rules, getQuestionAndRightAnswer) => {
+  console.log('Welcome to the Brain Games!');
+  console.log(`${rules}\n`);
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!\n`);
 
   for (let index = 0; index < attempts; index += 1) {
-    const expression = getExpression();
-    const rightAnswer = getRightAnswer(expression);
-    const result = getAndCheckAnswer(expression, rightAnswer);
-    if (result !== true) {
+    const questionAndRightAnswer = getQuestionAndRightAnswer();
+    const question = car(questionAndRightAnswer);
+    const rightAnswer = cdr(questionAndRightAnswer);
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (сheckAnswer(userAnswer, rightAnswer) === false) {
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
       console.log(`Let's try again, ${name}!`);
       return;
-    }
-  }
-
-  console.log(`Congratulations, ${name}!`);
+    } console.log('Correct!');
+  } console.log(`Congratulations, ${name}!`);
 };

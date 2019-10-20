@@ -1,42 +1,37 @@
+import { cons, car, cdr } from '@hexlet/pairs';
 import { rand, gameProcess } from '../engine';
 
-const getProgression = () => {
-  const minRand = 1;
-  const maxRand = 100;
-  const maxStep = 7;
-  const arrayLength = 10;
+const rulesOfTheGame = 'What number is missing in the progression?';
 
+const minRand = 0;
+const maxRand = 100;
+const maxStep = 10;
+
+const getProgressionAndMissingElement = () => {
+  const progression = [];
+  const progressionLength = 10;
   const firstElement = rand(minRand, maxRand);
-  const step = rand(minRand, maxStep);
-  const missIndex = rand(minRand, arrayLength - 1);
+  const progressionStep = rand(minRand + 1, maxStep);
+  const indexOfMissingElement = rand(minRand + 1, progressionLength - 1);
+  const missingElement = firstElement + (progressionStep * indexOfMissingElement);
 
-  const progressionArray = [firstElement];
-
-  for (let index = 1; index < arrayLength; index += 1) {
-    if (index === missIndex) {
-      progressionArray.push('..');
-      progressionArray.push(progressionArray[index - 1] + step * 2);
-      index += 1;
-    } else progressionArray.push(progressionArray[index - 1] + step);
+  for (let index = 0; index < progressionLength; index += 1) {
+    if (index === indexOfMissingElement) progression.push('..');
+    else progression.push(firstElement + (progressionStep * index));
   }
 
-  const stringProgression = progressionArray.join(' ');
-
-  return stringProgression;
+  return cons(progression, missingElement);
 };
 
-const getRightAnswer = (string) => {
-  const calcElement = () => {
-    const progArr = string.split(' ');
-    const indexOfMiss = progArr.indexOf('..');
-    const result = (Number(progArr[indexOfMiss + 1]) + Number(progArr[indexOfMiss - 1])) / 2;
-    return result;
-  }; return calcElement().toString();
+
+const getQuestionAndRightAnswer = () => {
+  const progressionAndMissingElement = getProgressionAndMissingElement();
+  const question = car(progressionAndMissingElement).join(' ');
+  const rightAnswer = cdr(progressionAndMissingElement).toString();
+
+  return cons(question, rightAnswer);
 };
 
-const game = () => {
-  const description = 'What number is missing in the progression?';
-  gameProcess(description, getProgression, getRightAnswer);
-};
+const game = () => gameProcess(rulesOfTheGame, getQuestionAndRightAnswer);
 
 export default game;

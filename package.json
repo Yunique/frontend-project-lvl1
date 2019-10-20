@@ -1,6 +1,6 @@
 {
   "name": "frontend-project-lvl1",
-  "version": "1.5.4",
+  "version": "1.6.0",
   "description": "This is a set of 5 mini-games.",
   "keywords": [
     "brain-games",
@@ -39,7 +39,7 @@
   "homepage": "https://github.com/Yunique/frontend-project-lvl1#readme",
   "dependencies": {
     "readline-sync": "^1.4.10",
-    "mathjs": "^6.2.3"
+    "@hexlet/pairs": "^1.0.10"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.3",

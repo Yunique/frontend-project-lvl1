@@ -1,22 +1,23 @@
+import { cons } from '@hexlet/pairs';
 import { rand, gameProcess } from '../engine';
 
-const getExpression = () => {
-  const minRand = 0;
-  const maxRand = 100;
-  const num = rand(minRand, maxRand);
-  return num;
+const rulesOfTheGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const minRand = 0;
+const maxRand = 100;
+
+const isEven = (operand) => {
+  const answer = (operand % 2 === 0);
+  return answer;
 };
 
-const getRightAnswer = (number) => {
-  const isEven = () => {
-    const answer = (number % 2 === 0) ? 'yes' : 'no';
-    return answer;
-  }; return isEven();
+const getQuestionAndRightAnswer = () => {
+  const question = rand(minRand, maxRand);
+  const rightAnswer = (isEven(question) === true) ? 'yes' : 'no';
+
+  return cons(question.toString(), rightAnswer);
 };
 
-const game = () => {
-  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
-  gameProcess(description, getExpression, getRightAnswer);
-};
+const game = () => gameProcess(rulesOfTheGame, getQuestionAndRightAnswer);
 
 export default game;

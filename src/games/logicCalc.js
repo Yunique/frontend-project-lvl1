@@ -1,26 +1,28 @@
-import { evaluate } from 'mathjs';
+import { cons } from '@hexlet/pairs';
 import { rand, gameProcess } from '../engine';
 
-const getExpression = () => {
-  const minRand = 0;
-  const maxRand = 100;
-  const actions = '+-*';
+const rulesOfTheGame = 'What is the result of the expression?';
+
+const actions = '+-*';
+const minRand = 0;
+const maxRand = 100;
+
+const calcAnswer = (firstOperand, secondOperand, operator) => {
+  if (operator === '+') return firstOperand + secondOperand;
+  if (operator === '-') return firstOperand - secondOperand;
+  return firstOperand * secondOperand;
+};
+
+const getQuestionAndRightAnswer = () => {
   const firstOperand = rand(minRand, maxRand);
   const secondOperand = rand(minRand, maxRand);
-  const expression = `${firstOperand}${actions[rand(minRand, actions.length - 1)]}${secondOperand}`;
-  return expression;
-};
-const getRightAnswer = (expression) => {
-  const calcExpression = () => {
-    const result = evaluate(expression);
-    return result;
-  }; return calcExpression().toString();
+  const operator = actions[rand(minRand, actions.length - 1)];
+  const question = `${firstOperand}${operator}${secondOperand}`;
+  const rightAnswer = calcAnswer(firstOperand, secondOperand, operator).toString();
+
+  return cons(question, rightAnswer);
 };
 
-
-const game = () => {
-  const description = 'What is the result of the expression?';
-  gameProcess(description, getExpression, getRightAnswer);
-};
+const game = () => gameProcess(rulesOfTheGame, getQuestionAndRightAnswer);
 
 export default game;

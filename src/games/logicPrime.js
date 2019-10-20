@@ -1,22 +1,24 @@
+import { cons } from '@hexlet/pairs';
 import { rand, gameProcess } from '../engine';
 
-const getExpression = () => {
-  const minRand = 0;
-  const maxRand = 100;
-  const operand = rand(minRand, maxRand);
-  return operand;
+const rulesOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const minRand = 0;
+const maxRand = 100;
+
+const isPrime = (operand) => {
+  if (operand <= 1) return false;
+  for (let counter = 2; counter <= (operand / 2); counter += 1) {
+    if (operand % counter === 0) return false;
+  } return true;
 };
 
-const isPrime = (number) => {
-  if (number <= 1) return false;
-  for (let counter = 2; counter <= (number / 2); counter += 1) {
-    if (number % counter === 0) return 'no';
-  } return 'yes';
+const getQuestionAndRightAnswer = () => {
+  const question = rand(minRand, maxRand);
+  const rightAnswer = (isPrime(question) === true) ? 'yes' : 'no';
+  return cons(question.toString(), rightAnswer);
 };
 
-const game = () => {
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  gameProcess(description, getExpression, isPrime);
-};
+const game = () => gameProcess(rulesOfTheGame, getQuestionAndRightAnswer);
 
 export default game;

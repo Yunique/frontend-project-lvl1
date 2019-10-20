@@ -1,30 +1,25 @@
+import { cons } from '@hexlet/pairs';
 import { rand, gameProcess } from '../engine';
 
-const getExpression = () => {
-  const minRand = 1;
-  const maxRand = 100;
+const rulesOfTheGame = 'Find the greatest common divisor of given numbers.';
 
-  const firstOperand = rand(minRand, maxRand);
-  const secondOperand = rand(minRand, maxRand);
-  const expression = `${firstOperand} ${secondOperand}`;
-  return expression;
+const minRand = 0;
+const maxRand = 100;
+
+const gcd = (x, y) => {
+  if (y === 0) return Math.abs(x);
+  return gcd(y, (x % y));
 };
 
-const getRightAnswer = (expression) => {
-  const space = expression.indexOf(' ');
-  const firstOperand = Number(expression.slice(0, space));
-  const secondOperand = Number(expression.slice(space + 1));
+const getQuestionAndRightAnswer = () => {
+  const firstOperand = rand(minRand + 1, maxRand);
+  const secondOperand = rand(minRand + 1, maxRand);
+  const question = `${firstOperand} ${secondOperand}`;
+  const rightAnswer = gcd(firstOperand, secondOperand).toString();
 
-  const gcd = (x, y) => {
-    if (y === 0) return Math.abs(x);
-    return gcd(y, (x % y));
-  };
-  return gcd(firstOperand, secondOperand).toString();
+  return cons(question, rightAnswer);
 };
 
-const game = () => {
-  const description = 'Find the greatest common divisor of given numbers.';
-  gameProcess(description, getExpression, getRightAnswer);
-};
+const game = () => gameProcess(rulesOfTheGame, getQuestionAndRightAnswer);
 
 export default game;
