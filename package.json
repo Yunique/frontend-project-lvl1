@@ -38,8 +38,8 @@
   },
   "homepage": "https://github.com/Yunique/frontend-project-lvl1#readme",
   "dependencies": {
-    "readline-sync": "^1.4.10",
-    "@hexlet/pairs": "^1.0.10"
+    "@hexlet/pairs": "^1.0.10",
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.3",
