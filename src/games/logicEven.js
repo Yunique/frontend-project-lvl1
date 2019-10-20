@@ -12,10 +12,11 @@ const isEven = (operand) => {
 };
 
 const getQuestionAndRightAnswer = () => {
-  const question = rand(minRand, maxRand);
-  const rightAnswer = (isEven(question) === true) ? 'yes' : 'no';
+  const operand = rand(minRand, maxRand);
+  const rightAnswer = (isEven(operand) === true) ? 'yes' : 'no';
+  const question = operand.toString();
 
-  return cons(question.toString(), rightAnswer);
+  return cons(question, rightAnswer);
 };
 
 const game = () => gameProcess(rulesOfTheGame, getQuestionAndRightAnswer);

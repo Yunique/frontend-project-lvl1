@@ -16,6 +16,7 @@ const isPrime = (operand) => {
 const getQuestionAndRightAnswer = () => {
   const question = rand(minRand, maxRand);
   const rightAnswer = (isPrime(question) === true) ? 'yes' : 'no';
+
   return cons(question.toString(), rightAnswer);
 };
 
