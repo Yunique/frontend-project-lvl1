@@ -7,9 +7,10 @@ const minRand = 0;
 const maxRand = 100;
 const maxStep = 10;
 
+const progressionLength = 10;
+
 const getProgressionAndMissingElement = () => {
   const progression = [];
-  const progressionLength = 10;
   const firstElement = rand(minRand, maxRand);
   const progressionStep = rand(minRand + 1, maxStep);
   const indexOfMissingElement = rand(minRand + 1, progressionLength - 1);
