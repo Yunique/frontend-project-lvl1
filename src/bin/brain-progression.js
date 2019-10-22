@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import game from '../games/logicProgression';
+import game from '../games/progression';
 
 game();
