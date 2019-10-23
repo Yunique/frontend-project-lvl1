@@ -23,7 +23,7 @@ const getProgression = () => {
   return progression;
 };
 
-const getRightAnswer = (progression) => {
+const getMissingElement = (progression) => {
   const indexOfMissingElement = progression.indexOf('..');
   return (progression[indexOfMissingElement + 1] + progression[indexOfMissingElement - 1]) / 2;
 };
@@ -31,7 +31,7 @@ const getRightAnswer = (progression) => {
 const getQuestionAndRightAnswer = () => {
   const progression = getProgression();
   const question = progression.join(' ');
-  const rightAnswer = getRightAnswer(progression).toString();
+  const rightAnswer = getMissingElement(progression).toString();
 
   return cons(question, rightAnswer);
 };
