@@ -1,5 +1,6 @@
 import { cons } from '@hexlet/pairs';
-import { rand, gameProcess } from '../engine';
+import gameProcess from '../engine';
+import rand from '../utils';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
