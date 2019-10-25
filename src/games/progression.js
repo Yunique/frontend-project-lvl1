@@ -28,12 +28,12 @@ const getRightAnswer = (firstElement, progressionStep, indexOfMissingElement) =>
 };
 
 const getQuestionAndRightAnswer = () => {
+  const progressionLength = 10;
   const firstElement = rand(min, max);
   const progressionStep = rand(min + 1, maxStep);
   const indexOfMissingElement = rand(min + 1, progressionLength - 1);
-  const lengthOfProgression = 10;
 
-  const progression = getProgression(firstElement, progressionStep, lengthOfProgression);
+  const progression = getProgression(firstElement, progressionStep, progressionLength);
   const question = getQuestion(progression, indexOfMissingElement);
   const rightAnswer = getRightAnswer(firstElement, progressionStep, indexOfMissingElement);
 
