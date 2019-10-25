@@ -8,9 +8,11 @@ const min = 0;
 const max = 100;
 const maxStep = 10;
 
-const getProgression = (firstElement, progressionStep, progressionLength) => {
+const progressionLength = 10;
+
+const getProgression = (firstElement, progressionStep, length) => {
   const progression = [];
-  for (let index = 0; index < progressionLength; index += 1) {
+  for (let index = 0; index < length; index += 1) {
     progression.push(firstElement + (progressionStep * index));
   }
   return progression;
@@ -28,7 +30,6 @@ const getRightAnswer = (firstElement, progressionStep, indexOfMissingElement) =>
 };
 
 const getQuestionAndRightAnswer = () => {
-  const progressionLength = 10;
   const firstElement = rand(min, max);
   const progressionStep = rand(min + 1, maxStep);
   const indexOfMissingElement = rand(min + 1, progressionLength - 1);
